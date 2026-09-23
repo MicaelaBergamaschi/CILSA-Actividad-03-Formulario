@@ -1,0 +1,168 @@
+/* Reset y estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Centrado vertical y horizontal de la card: body y container */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f0f0;
+  /*background-image: linear-gradient(to bottom, #242424, #bbbec4 50%);*/
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 20px;
+}
+
+/* Reglas generales para cualquier botón */
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer; /* Cuando el mouse pasa sobre el botón, cambia el cursor a una mano */
+}
+
+/* Reglas específicas para cada boton especifico*/
+.btn-primary {
+  background-color: #0066cc;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333333;
+}
+
+.error-msg {
+  color: #d93025;
+  font-size: 0.8125rem; /* 13px */
+  margin-top: 5px;
+  /* min-height: 18px; */ /* Reserva el espacio para que el formulario no salte cuando hay un error*/
+  display: block;
+}
+
+/* Resaltado del input cuando contiene un error */
+.input-error {
+  border: 1.5px solid #d93025 !important;
+  background-color: #fff8f7;
+}
+
+/* ==========================================
+   PASO 2: ESTILO DE ALTO CONTRASTE
+   ========================================== */
+
+/* Se activa cuando la clase .alto-contraste está presente */
+body.alto-contraste {
+  background-color: #000000; /* Fondo totalmente negro */
+  color: #ffffff; /* Texto totalmente blanco */
+}
+
+body.alto-contraste .container {
+  background-color: #121212; /* Fondo de tarjeta oscuro */
+  border: 3px solid #02fd02; /* Borde amarillo chillón de alta visibilidad */
+  box-shadow: 5px 5px 10px rgba(22, 255, 1, 0.75); /* Se quitan sombras suaves */
+}
+
+/* Campos de texto en alto contraste */
+body.alto-contraste input,
+body.alto-contraste select {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff; /* Borde blanco grueso */
+  /*font-size: 1.1rem; /* Letra un poco más grande para mejor lectura */
+  font-weight: bold;
+  color-scheme: dark;
+}
+
+/* Enfoque accesible: resalta el campo cuando el usuario hace clic o navega con TAB */
+body.alto-contraste input:focus,
+body.alto-contraste select:focus {
+  outline: 2px solid #02fd02;
+  border-color: #02fd02;
+}
+
+/* Botones en alto contraste */
+body.alto-contraste .btn {
+  border: 2px solid #ffffff;
+  font-size: 1.05rem;
+}
+
+body.alto-contraste .btn-primary {
+  background-color: #02fd02; /* Fondo amarillo */
+  color: #000000; /* Texto negro */
+  border-color: #02fd02;
+}
+
+body.alto-contraste .btn-secondary {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Cambio de color al pasar el cursor (hover) */
+body.alto-contraste .btn-primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.alto-contraste .btn-secondary:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.alto-contraste .error-msg {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+body.alto-contraste .input-error {
+  border: 2px solid #ff4d4d !important;
+  outline: 1px solid #ff4d4d;
+}
